@@ -91,16 +91,6 @@ class Opencv3 < Formula
   # dependencies use fortran, which leads to spurious messages about gcc
   cxxstdlib_check :skip
 
-  resource "icv-macosx" do
-    url "https://raw.githubusercontent.com/opencv/opencv_3rdparty/81a676001ca8075ada498583e4166079e5744668/ippicv/ippicv_macosx_20151201.tgz", :using => :nounzip
-    sha256 "8a067e3e026195ea3ee5cda836f25231abb95b82b7aa25f0d585dc27b06c3630"
-  end
-
-  resource "icv-linux" do
-    url "https://raw.githubusercontent.com/opencv/opencv_3rdparty/81a676001ca8075ada498583e4166079e5744668/ippicv/ippicv_linux_20151201.tgz", :using => :nounzip
-    sha256 "4333833e40afaa22c804169e44f9a63e357e21476b765a5683bcb3760107f0da"
-  end
-
   def arg_switch(opt)
     build.with?(opt) ? "ON" : "OFF"
   end
